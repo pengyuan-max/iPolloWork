@@ -1,0 +1,28 @@
+{
+  "name": "@ipollo/work",
+  "version": "1.0.6",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.28.5",
+  "engines": {
+    "node": ">=24.9.0"
+  },
+  "scripts": {
+    "setup": "node integrations/tooling/setup.mjs",
+    "setup:build": "node integrations/tooling/setup.mjs --build --plugins",
+    "check:upstream": "node integrations/tooling/verify.mjs",
+    "build": "node integrations/tooling/build.mjs",
+    "test": "node --test integrations/tooling/tests/*.test.mjs",
+    "dev:desktop": "node integrations/desktop/run.mjs dev.ts",
+    "package:desktop:mac:arm64": "node integrations/desktop/run.mjs package-target.ts mac-arm64",
+    "package:desktop:mac:x64": "node integrations/desktop/run.mjs package-target.ts mac-x64",
+    "package:desktop:win:x64": "node integrations/desktop/run.mjs package-target.ts win-x64",
+    "package:desktop:linux:x64": "node integrations/desktop/run.mjs package-target.ts linux-x64",
+    "check:docs": "node integrations/tooling/check-docs.mjs",
+    "package:plugin": "node integrations/tooling/package-plugin.mjs",
+    "check:desktop": "node integrations/desktop/run.mjs package-target.ts mac-arm64 --check --unsigned",
+    "audit:dependencies": "node integrations/tooling/audit.mjs",
+    "start": "node integrations/tooling/start.mjs"
+  },
+  "license": "SEE LICENSE IN LICENSE"
+}
